@@ -4,8 +4,8 @@ import org.apache.commons.fileupload.MultipartStream;
 import org.apache.xml.security.signature.XMLSignatureInput;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.web.util.UriUtils;
-import cucumber.*;
 import org.yaml.snakeyaml.*;
+import java.util.*;
 
 
 import java.io.ByteArrayInputStream;
@@ -19,6 +19,7 @@ public class Main {
     BCrypt.checkpw(candidate, hashed);
 
     filterXMLSignature();
+    snakes();
 
     // Update Advisor: changed in the upgrade from Spring Web 3.1.1.RELEASE to 3.2.15.RELEASE
     UriUtils.encodeFragment("", "");
@@ -31,7 +32,7 @@ public class Main {
 
     new XMLSignatureInput(bytes).addNodeFilter(null);
   }
-  //@Given("^I open seleniumframework website$")
+
   private static void snakes() {
     String data = "a: &a [\"lol\",\"lol\",\"lol\",\"lol\",\"lol\",\"lol\",\"lol\",\"lol\",\"lol\"]\n" +
             "b: &b [*a,*a,*a,*a,*a,*a,*a,*a,*a]\n" +
@@ -44,7 +45,7 @@ public class Main {
             "i: &i [*h,*h,*h,*h,*h,*h,*h,*h,*h]";
     Yaml yaml = new Yaml();
     Map map = (Map) yaml.load(data); //load yaml
-    //return stuff;
+
   }
 
 }
