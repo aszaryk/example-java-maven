@@ -1,6 +1,6 @@
 # [:] Example Maven Project
 
-An example maven project to demonstrate [srcclr](https://www.srcclr.com) scans.
+An example maven project to demonstrate [Veracode SCA Agent-Based](https://www.veracode.com) scans.
 
 ## Try me!
 
